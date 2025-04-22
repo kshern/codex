@@ -190,9 +190,12 @@ test("loads and saves providers correctly", () => {
 
   // Check providers were loaded correctly
   expect(loadedConfig.provider).toBe("anthropic");
-  expect(loadedConfig.providers).toEqual({ ...defaultProviders, ...customProviders });
+  expect(loadedConfig.providers).toEqual({
+    ...defaultProviders,
+    ...customProviders,
+  });
 
-  // Test merging with built-in providers 
+  // Test merging with built-in providers
   // Create a config with only one custom provider
   const partialProviders = {
     customProvider: {
